@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Administrador",
+    "email": "admin@shieldtech.com",
+    "password": "password",
+    "role": "admin"
+  },
+  {
+    "name": "Dr. Roberto Mendez",
+    "email": "doctor@shieldtech.com",
+    "password": "password",
+    "role": "doctor"
+  },
+  {
+    "name": "Demo Usuario",
+    "email": "demo@shieldtech.com",
+    "password": "password",
+    "role": "paciente",
+    "doctor_email": "doctor@shieldtech.com"
+  },
+  {
+    "name": "Ana Lopez",
+    "email": "ana@shieldtech.com",
+    "password": "password",
+    "role": "paciente",
+    "doctor_email": "doctor@shieldtech.com"
+  }
+]

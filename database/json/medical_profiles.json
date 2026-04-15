@@ -1,0 +1,42 @@
+[
+  {
+    "user_email": "demo@shieldtech.com",
+    "blood_type": "O+",
+    "gender": "masculino",
+    "curp": "GARC020515HDFRRL09",
+    "allergies": "Penicilina",
+    "chronic_conditions": "Ninguna",
+    "medications": "Ninguno",
+    "emergency_contact_name": "Maria Garcia",
+    "emergency_contact_phone": "+52 555 123 4567",
+    "emergency_contact_relation": "Madre",
+    "emergency_contact2_name": "Pedro Garcia",
+    "emergency_contact2_phone": "+52 555 987 6543",
+    "emergency_contact2_relation": "Padre",
+    "birth_date": "2002-05-15",
+    "height": 170,
+    "weight": 68,
+    "insurance_provider": "IMSS",
+    "insurance_number": "1234567890",
+    "home_address": "Av. Reforma 123, Col. Centro, CDMX",
+    "home_latitude": 19.4326,
+    "home_longitude": -99.1332,
+    "doctor_name": "Dr. Roberto Mendez",
+    "doctor_phone": "+52 555 456 7890",
+    "doctor_specialty": "Medicina General",
+    "doctor_hospital": "Hospital General de Mexico",
+    "privacy_accepted": true
+  },
+  {
+    "user_email": "ana@shieldtech.com",
+    "blood_type": "A+",
+    "gender": "femenino",
+    "allergies": "Ninguna",
+    "chronic_conditions": "Asma leve",
+    "medications": "Salbutamol inhalador",
+    "birth_date": "1998-11-20",
+    "height": 162,
+    "weight": 55,
+    "privacy_accepted": true
+  }
+]

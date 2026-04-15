@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+    --sw-primary: #0891b2;
+    --sw-danger: #dc2626;
+    --sw-success: #059669;
+    --sw-warning: #d97706;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* SOS button pulse */
+@keyframes pulse-sos {
+    0%, 100% { box-shadow: 0 0 20px rgba(220,38,38,0.3); }
+    50% { box-shadow: 0 0 35px rgba(220,38,38,0.6); }
+}
+.btn-sos-pulse {
+    animation: pulse-sos 2s infinite;
+}
