@@ -1,0 +1,36 @@
+[
+  {
+    "user_email": "demo@shieldtech.com",
+    "type": "heart_rate",
+    "severity": "high",
+    "message": "Ritmo cardiaco elevado: 125 BPM",
+    "latitude": 19.4318,
+    "longitude": -99.1342,
+    "resolved": false
+  },
+  {
+    "user_email": "demo@shieldtech.com",
+    "type": "blood_pressure",
+    "severity": "high",
+    "message": "Presion arterial alta: 145/92",
+    "latitude": 19.4318,
+    "longitude": -99.1342,
+    "resolved": false
+  },
+  {
+    "user_email": "demo@shieldtech.com",
+    "type": "sos",
+    "severity": "critical",
+    "message": "SOS activado por el usuario",
+    "latitude": 19.4330,
+    "longitude": -99.1335,
+    "resolved": true
+  },
+  {
+    "user_email": "ana@shieldtech.com",
+    "type": "oxygen",
+    "severity": "high",
+    "message": "Oxigeno bajo: 94%",
+    "resolved": false
+  }
+]

@@ -1,0 +1,148 @@
+ [
+  {
+    "user_email": "demo@shieldtech.com",
+    "heart_rate": 72,
+    "blood_pressure_systolic": 120,
+    "blood_pressure_diastolic": 80,
+    "temperature": 36.5,
+    "oxygen_saturation": 98,
+    "steps": 1250,
+    "latitude": 19.4326,
+    "longitude": -99.1332,
+    "recorded_at": "2026-04-15 08:00:00"
+  },
+  {
+    "user_email": "demo@shieldtech.com",
+    "heart_rate": 78,
+    "blood_pressure_systolic": 118,
+    "blood_pressure_diastolic": 76,
+    "temperature": 36.6,
+    "oxygen_saturation": 97,
+    "steps": 2340,
+    "latitude": 19.4330,
+    "longitude": -99.1335,
+    "recorded_at": "2026-04-15 08:30:00"
+  },
+  {
+    "user_email": "demo@shieldtech.com",
+    "heart_rate": 85,
+    "blood_pressure_systolic": 125,
+    "blood_pressure_diastolic": 82,
+    "temperature": 36.7,
+    "oxygen_saturation": 96,
+    "steps": 3100,
+    "latitude": 19.4328,
+    "longitude": -99.1330,
+    "recorded_at": "2026-04-15 09:00:00"
+  },
+  {
+    "user_email": "demo@shieldtech.com",
+    "heart_rate": 68,
+    "blood_pressure_systolic": 115,
+    "blood_pressure_diastolic": 75,
+    "temperature": 36.4,
+    "oxygen_saturation": 99,
+    "steps": 3800,
+    "latitude": 19.4325,
+    "longitude": -99.1328,
+    "recorded_at": "2026-04-15 09:30:00"
+  },
+  {
+    "user_email": "demo@shieldtech.com",
+    "heart_rate": 92,
+    "blood_pressure_systolic": 130,
+    "blood_pressure_diastolic": 85,
+    "temperature": 36.8,
+    "oxygen_saturation": 95,
+    "steps": 4500,
+    "latitude": 19.4322,
+    "longitude": -99.1340,
+    "recorded_at": "2026-04-15 10:00:00"
+  },
+  {
+    "user_email": "demo@shieldtech.com",
+    "heart_rate": 75,
+    "blood_pressure_systolic": 122,
+    "blood_pressure_diastolic": 78,
+    "temperature": 36.5,
+    "oxygen_saturation": 98,
+    "steps": 5200,
+    "latitude": 19.4320,
+    "longitude": -99.1338,
+    "recorded_at": "2026-04-15 10:30:00"
+  },
+  {
+    "user_email": "demo@shieldtech.com",
+    "heart_rate": 125,
+    "blood_pressure_systolic": 145,
+    "blood_pressure_diastolic": 92,
+    "temperature": 37.2,
+    "oxygen_saturation": 93,
+    "steps": 5800,
+    "latitude": 19.4318,
+    "longitude": -99.1342,
+    "recorded_at": "2026-04-15 11:00:00"
+  },
+  {
+    "user_email": "demo@shieldtech.com",
+    "heart_rate": 80,
+    "blood_pressure_systolic": 119,
+    "blood_pressure_diastolic": 77,
+    "temperature": 36.6,
+    "oxygen_saturation": 97,
+    "steps": 6400,
+    "latitude": 19.4326,
+    "longitude": -99.1332,
+    "recorded_at": "2026-04-15 11:30:00"
+  },
+  {
+    "user_email": "ana@shieldtech.com",
+    "heart_rate": 70,
+    "blood_pressure_systolic": 110,
+    "blood_pressure_diastolic": 70,
+    "temperature": 36.3,
+    "oxygen_saturation": 98,
+    "steps": 800,
+    "recorded_at": "2026-04-15 08:00:00"
+  },
+  {
+    "user_email": "ana@shieldtech.com",
+    "heart_rate": 74,
+    "blood_pressure_systolic": 112,
+    "blood_pressure_diastolic": 72,
+    "temperature": 36.5,
+    "oxygen_saturation": 97,
+    "steps": 1500,
+    "recorded_at": "2026-04-15 08:30:00"
+  },
+  {
+    "user_email": "ana@shieldtech.com",
+    "heart_rate": 82,
+    "blood_pressure_systolic": 118,
+    "blood_pressure_diastolic": 75,
+    "temperature": 36.6,
+    "oxygen_saturation": 96,
+    "steps": 2200,
+    "recorded_at": "2026-04-15 09:00:00"
+  },
+  {
+    "user_email": "ana@shieldtech.com",
+    "heart_rate": 88,
+    "blood_pressure_systolic": 115,
+    "blood_pressure_diastolic": 74,
+    "temperature": 36.4,
+    "oxygen_saturation": 94,
+    "steps": 2900,
+    "recorded_at": "2026-04-15 09:30:00"
+  },
+  {
+    "user_email": "ana@shieldtech.com",
+    "heart_rate": 76,
+    "blood_pressure_systolic": 108,
+    "blood_pressure_diastolic": 68,
+    "temperature": 36.5,
+    "oxygen_saturation": 99,
+    "steps": 3500,
+    "recorded_at": "2026-04-15 10:00:00"
+  }
+]

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Alert;
+use App\Models\Backup;
 use App\Models\MedicalProfile;
 use App\Models\User;
 use App\Models\VitalSign;
@@ -18,19 +19,19 @@ class DatabaseSeeder extends Seeder
         MedicalProfile::truncate();
         VitalSign::truncate();
         Alert::truncate();
+        Backup::truncate();
 
-        // Load users from JSON
+        // --- 1. Load users from JSON ---
         $usersJson = json_decode(file_get_contents(database_path('json/users.json')), true);
         $userMap = [];
 
         foreach ($usersJson as $u) {
-            $userData = [
+            $user = User::create([
                 'name' => $u['name'],
                 'email' => $u['email'],
                 'password' => Hash::make($u['password']),
                 'role' => $u['role'],
-            ];
-            $user = User::create($userData);
+            ]);
             $userMap[$u['email']] = $user;
         }
 
@@ -43,15 +44,14 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-        // Load medical profiles from JSON
+        // --- 2. Load medical profiles from JSON ---
         $profilesJson = json_decode(file_get_contents(database_path('json/medical_profiles.json')), true);
 
         foreach ($profilesJson as $p) {
-            $userEmail = $p['user_email'];
+            $email = $p['user_email'];
             unset($p['user_email']);
-
-            if (isset($userMap[$userEmail])) {
-                $p['user_id'] = (string) $userMap[$userEmail]->_id;
+            if (isset($userMap[$email])) {
+                $p['user_id'] = (string) $userMap[$email]->_id;
                 if (!empty($p['privacy_accepted'])) {
                     $p['privacy_accepted_at'] = now();
                 }
@@ -59,50 +59,37 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-        // Generate vital signs for pacientes
-        $now = now();
-        foreach ($userMap as $email => $user) {
-            if ($user->role !== 'paciente') continue;
+        // --- 3. Load vital signs from JSON ---
+        $vitalsJson = json_decode(file_get_contents(database_path('json/vital_signs.json')), true);
 
-            $count = $email === 'demo@shieldtech.com' ? 96 : 48;
-            for ($i = $count; $i >= 0; $i--) {
-                VitalSign::create([
-                    'user_id' => (string) $user->_id,
-                    'heart_rate' => rand(60, 100),
-                    'blood_pressure_systolic' => rand(110, 135),
-                    'blood_pressure_diastolic' => rand(65, 85),
-                    'temperature' => round(rand(360, 375) / 10, 1),
-                    'oxygen_saturation' => rand(94, 99),
-                    'steps' => rand(0, 500),
-                    'latitude' => 19.4326 + (rand(-100, 100) / 10000),
-                    'longitude' => -99.1332 + (rand(-100, 100) / 10000),
-                    'recorded_at' => $now->copy()->subMinutes($i * 30),
-                ]);
+        foreach ($vitalsJson as $v) {
+            $email = $v['user_email'];
+            unset($v['user_email']);
+            if (isset($userMap[$email])) {
+                $v['user_id'] = (string) $userMap[$email]->_id;
+                VitalSign::create($v);
             }
         }
 
-        // Sample alerts for demo user
-        $demo = $userMap['demo@shieldtech.com'];
-        Alert::create([
-            'user_id' => (string) $demo->_id,
-            'type' => 'heart_rate',
-            'severity' => 'high',
-            'message' => 'Ritmo cardiaco elevado: 125 BPM',
-            'latitude' => 19.4326,
-            'longitude' => -99.1332,
-        ]);
+        // --- 4. Load alerts from JSON ---
+        $alertsJson = json_decode(file_get_contents(database_path('json/alerts.json')), true);
 
-        Alert::create([
-            'user_id' => (string) $demo->_id,
-            'type' => 'sos',
-            'severity' => 'critical',
-            'message' => 'SOS activado por el usuario',
-            'latitude' => 19.4330,
-            'longitude' => -99.1335,
-            'resolved' => true,
-            'resolved_at' => $now->copy()->subHours(1),
-        ]);
+        foreach ($alertsJson as $a) {
+            $email = $a['user_email'];
+            unset($a['user_email']);
+            if (isset($userMap[$email])) {
+                $a['user_id'] = (string) $userMap[$email]->_id;
+                if (!empty($a['resolved'])) {
+                    $a['resolved_at'] = now()->subHours(1);
+                }
+                Alert::create($a);
+            }
+        }
 
         $this->command->info('Base de datos MongoDB cargada desde archivos JSON.');
+        $this->command->info('  - users.json: ' . count($usersJson) . ' usuarios');
+        $this->command->info('  - medical_profiles.json: ' . count($profilesJson) . ' perfiles');
+        $this->command->info('  - vital_signs.json: ' . count($vitalsJson) . ' signos vitales');
+        $this->command->info('  - alerts.json: ' . count($alertsJson) . ' alertas');
     }
 }
